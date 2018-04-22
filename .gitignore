@@ -1,0 +1,13 @@
+/.externalToolBuilders/
+
+/.idea/
+/target/
+/out/
+/src/test/
+basic-code-generator.iml
+
+
+/.myeclipse/
+/.settings/
+.classpath
+.project

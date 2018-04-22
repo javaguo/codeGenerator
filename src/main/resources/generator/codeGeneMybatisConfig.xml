@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<!-- mybatis生成代码配置文件 -->
+<generatorConfiguration>
+    <context id="Mysql" targetRuntime="MyBatis3Simple" defaultModelType="flat">
+
+        <plugin type="tk.mybatis.mapper.generator.MapperPlugin">
+            <property name="mappers" value="tk.mybatis.mapper.common.Mapper"/>
+            <!-- caseSensitive默认false，当数据库表名区分大小写时，可以将该属性设置为true -->
+            <property name="caseSensitive" value="true"/>
+        </plugin>
+
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://localhost:3306/origin"
+                        userId="root"
+                        password="123456">
+        </jdbcConnection>
+
+        <!--<javaModelGenerator targetPackage="temp.model" targetProject="D:\j2ee\java\workspace\idea\tgwBasic\basic-manager\basic-code-generator\src\main\java"/>
+        <sqlMapGenerator targetPackage="temp.mapper"  targetProject="D:\j2ee\java\workspace\idea\tgwBasic\basic-manager\basic-code-generator\src\main\java"/>
+        <javaClientGenerator targetPackage="temp.mapper" targetProject="D:\j2ee\java\workspace\idea\tgwBasic\basic-manager\basic-code-generator\src\main\java" type="XMLMAPPER" />-->
+
+        <!-- mybatis生成代码的包路径及生成文件的临时路径 -->
+        <!-- com_event
+        <javaModelGenerator targetPackage="com.tgw.omnipotent.comEventsInterval.model" targetProject="D:\j2ee\java\workspace\idea\tgwBasic\basic-manager\basic-code-generator\src\main\java\temp"/>
+        <sqlMapGenerator targetPackage="com.tgw.omnipotent.comEventsInterval.mapper"  targetProject="D:\j2ee\java\workspace\idea\tgwBasic\basic-manager\basic-code-generator\src\main\java\temp"/>
+        <javaClientGenerator targetPackage="com.tgw.omnipotent.comEventsInterval.mapper" targetProject="D:\j2ee\java\workspace\idea\tgwBasic\basic-manager\basic-code-generator\src\main\java\temp" type="XMLMAPPER" />
+        -->
+
+        <!-- expendType、expend、receipts_type、receipts、lend、refund-->
+        <!-- 注：一定要保存下面的targetProject路径存在，不存在则手动创建好，mybatis生成代码插件不会自动创建，若路径不存在，则不会生成代码。 -->
+        <javaModelGenerator targetPackage="com.tgw.account.receiptsTypeSys.model" targetProject="D:\j2ee\java\workspace\idea\codeGenerator\objectCode\codeGeneMybatis\src\main\java"/>
+        <sqlMapGenerator targetPackage="com.tgw.account.receiptsTypeSys.mapper"  targetProject="D:\j2ee\java\workspace\idea\codeGenerator\objectCode\codeGeneMybatis\src\main\java"/>
+        <javaClientGenerator targetPackage="com.tgw.account.receiptsTypeSys.mapper" targetProject="D:\j2ee\java\workspace\idea\codeGenerator\objectCode\codeGeneMybatis\src\main\java" type="XMLMAPPER" />
+
+        <!-- mybatis要生成的表名 -->
+        <!-- expend_type、expend_type_sys、expend、receipts_type、receipts、lend、refund-->
+        <table tableName="receipts_type_sys" >
+            <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
+        </table>
+    </context>
+</generatorConfiguration>
